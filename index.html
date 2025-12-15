@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Café Aroma Local - Café artesanal e sabores únicos em Niterói/RJ">
+    <title>Café Aroma Local - Café Artesanal</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <!-- Header / Navegação -->
+    <header id="main-header">
+        <nav class="container">
+            <div class="nav-wrapper">
+                <div class="logo" id="logo-text">Café Aroma Local</div>
+                
+                <!-- Menu Desktop -->
+                <div class="nav-menu desktop-menu">
+                    <a href="#home" class="nav-link active" data-section="home">Início</a>
+                    <a href="#about" class="nav-link" data-section="about">Sobre</a>
+                    <a href="#products" class="nav-link" data-section="products">Produtos</a>
+                    <a href="#contact" class="nav-link" data-section="contact">Contato</a>
+                </div>
+
+                <!-- Botão Menu Mobile -->
+                <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Menu">
+                    <span class="menu-icon"></span>
+                </button>
+            </div>
+
+            <!-- Menu Mobile -->
+            <div class="mobile-menu" id="mobile-menu">
+                <a href="#home" class="mobile-nav-link">Início</a>
+                <a href="#about" class="mobile-nav-link">Sobre</a>
+                <a href="#products" class="mobile-nav-link">Produtos</a>
+                <a href="#contact" class="mobile-nav-link">Contato</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="hero-content container">
+            <h1 class="hero-title" id="hero-title">Café Aroma Local</h1>
+            <p class="hero-tagline" id="hero-tagline">Café artesanal e sabores únicos</p>
+            <button class="btn btn-primary" onclick="scrollToSection('contact')">
+                Entre em Contato
+            </button>
+        </div>
+    </section>
+
+    <!-- Sobre -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2 class="section-title">Sobre Nós</h2>
+            <div class="about-content">
+                <p class="about-text">
+                    Somos uma cafeteria artesanal que acredita no poder de um bom café 
+                    para transformar o dia das pessoas. Desde 2020, servimos os melhores 
+                    grãos selecionados com muito carinho e dedicação.
+                </p>
+                <p class="about-text">
+                    Nosso compromisso é oferecer uma experiência única, combinando 
+                    qualidade, sabor e um ambiente acolhedor para todos.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Produtos -->
+    <section id="products" class="products-section">
+        <div class="container">
+            <h2 class="section-title">Nossos Produtos</h2>
+            <div class="products-grid" id="products-grid">
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Entre em Contato</h2>
+            
+            <div class="contact-grid">
+                <!-- Informações de Contato -->
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div>
+                            <h3 class="contact-label">Endereço</h3>
+                            <p class="contact-text" id="contact-address">
+                                Rua das Flores, 123 - Centro, Niterói/RJ
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">📞</div>
+                        <div>
+                            <h3 class="contact-label">Telefone</h3>
+                            <a href="tel:21987654321" class="contact-link" id="contact-phone">
+                                (21) 98765-4321
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">✉️</div>
+                        <div>
+                            <h3 class="contact-label">E-mail</h3>
+                            <a href="mailto:contato@cafearoma.com.br" class="contact-link" id="contact-email">
+                                contato@cafearoma.com.br
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">🕒</div>
+                        <div>
+                            <h3 class="contact-label">Horário</h3>
+                            <p class="contact-text" id="contact-hours">
+                                Seg-Sex: 7h-19h | Sáb-Dom: 8h-20h
+                            </p>
+                        </div>
+                    </div>
+
+
+                <!-- Formulário de Contato -->
+                <div class="contact-form" id="contact-form">
+                    <div class="form-group">
+                        <label for="name" class="form-label">Nome *</label>
+                        <input 
+                            type="text" 
+                            id="name" 
+                            name="name" 
+                            class="form-input" 
+                            required
+                            aria-required="true"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email" class="form-label">E-mail *</label>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            class="form-input" 
+                            required
+                            aria-required="true"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone" class="form-label">Telefone</label>
+                        <input 
+                            type="tel" 
+                            id="phone" 
+                            name="phone" 
+                            class="form-input"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message" class="form-label">Mensagem *</label>
+                        <textarea 
+                            id="message" 
+                            name="message" 
+                            class="form-textarea" 
+                            rows="4" 
+                            required
+                            aria-required="true"
+                        ></textarea>
+                    </div>
+
+                    <button type="button" class="btn btn-primary btn-block" id="submit-btn">
+                        Enviar Mensagem
+                    </button>
+
+                    <div id="form-status" class="form-status" style="display: none;"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-text">
+                &copy; 2025 <span id="footer-business">Café Aroma Local</span>. 
+                Todos os direitos reservados.
+            </p>
+            <p class="footer-credit">
+                Feito para pequenos negócios locais
+            </p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

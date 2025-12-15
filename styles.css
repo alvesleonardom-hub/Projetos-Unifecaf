@@ -1,0 +1,581 @@
+/* 
+========================================
+CONFIGURAÇÕES 
+========================================
+*/
+
+:root {
+    /* Cores Principais - PERSONALIZE AQUI! */
+    --primary-color: #92400e;      /* Marrom principal */
+    --primary-hover: #78350f;      /* Marrom escuro (hover) */
+    --secondary-color: #d97706;    /* Laranja/âmbar */
+    --accent-color: #fbbf24;       /* Amarelo claro */
+    
+    /* Cores de Fundo */
+    --bg-light: #fef3c7;           /* Fundo claro (amarelado) */
+    --bg-white: #ffffff;           /* Branco */
+    --bg-dark: #78350f;            /* Fundo escuro */
+    
+    /* Cores de Texto */
+    --text-dark: #1f2937;          /* Texto escuro */
+    --text-medium: #4b5563;        /* Texto médio */
+    --text-light: #6b7280;         /* Texto claro */
+    --text-white: #ffffff;         /* Texto branco */
+    
+    /* Bordas e Sombras */
+    --border-color: #d1d5db;
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+    
+    /* Espaçamentos */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+    
+    /* Fontes */
+    --font-primary: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    
+    /* Transições */
+    --transition: all 0.3s ease;
+}
+
+/* Reset e Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-primary);
+    color: var(--text-dark);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+/* 
+========================================
+HEADER / NAVEGAÇÃO
+========================================
+*/
+
+#main-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: var(--bg-white);
+    box-shadow: var(--shadow-md);
+    z-index: 1000;
+}
+
+.nav-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-sm) 0;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+/* Menu Desktop */
+.desktop-menu {
+    display: flex;
+    gap: var(--spacing-lg);
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--text-medium);
+    font-weight: 500;
+    transition: var(--transition);
+    padding: var(--spacing-xs);
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--primary-color);
+}
+
+/* Botão Menu Mobile */
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: var(--spacing-xs);
+}
+
+.menu-icon {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: var(--text-dark);
+    position: relative;
+    transition: var(--transition);
+}
+
+.menu-icon::before,
+.menu-icon::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background: var(--text-dark);
+    transition: var(--transition);
+}
+
+.menu-icon::before {
+    top: -8px;
+}
+
+.menu-icon::after {
+    bottom: -8px;
+}
+
+/* Menu Mobile */
+.mobile-menu {
+    display: none;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-md) 0;
+}
+
+.mobile-menu.active {
+    display: flex;
+}
+
+.mobile-nav-link {
+    text-decoration: none;
+    color: var(--text-dark);
+    padding: var(--spacing-sm);
+    border-radius: 8px;
+    transition: var(--transition);
+}
+
+.mobile-nav-link:hover {
+    background: var(--bg-light);
+}
+
+/* 
+========================================
+HERO SECTION
+========================================
+*/
+
+.hero-section {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 60px;
+    background-image: url('https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=1200');
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    color: var(--text-white);
+}
+
+.hero-title {
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    font-weight: 700;
+    margin-bottom: var(--spacing-md);
+}
+
+.hero-tagline {
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    margin-bottom: var(--spacing-xl);
+}
+
+/* 
+========================================
+SEÇÕES GERAIS
+========================================
+*/
+
+section {
+    padding: var(--spacing-xl) 0;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-xl);
+}
+
+/* 
+========================================
+SOBRE
+========================================
+*/
+
+.about-section {
+    background: var(--bg-light);
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about-text {
+    font-size: 1.1rem;
+    color: var(--text-medium);
+    margin-bottom: var(--spacing-md);
+}
+
+/* 
+========================================
+PRODUTOS
+========================================
+*/
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.product-card {
+    background: var(--bg-white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    transition: var(--transition);
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.product-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.product-info {
+    padding: var(--spacing-md);
+}
+
+.product-name {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-xs);
+}
+
+.product-description {
+    color: var(--text-light);
+    margin-bottom: var(--spacing-sm);
+}
+
+.product-price {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+}
+
+/* 
+========================================
+CONTATO
+========================================
+*/
+
+.contact-section {
+    background: var(--bg-light);
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-xl);
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Informações de Contato */
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.contact-item {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.contact-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.contact-label {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: var(--spacing-xs);
+}
+
+.contact-text {
+    color: var(--text-medium);
+}
+
+.contact-link {
+    color: var(--text-medium);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.contact-link:hover {
+    color: var(--primary-color);
+}
+
+/* Redes Sociais */
+.social-links {
+    display: flex;
+    gap: var(--spacing-sm);
+    padding-top: var(--spacing-md);
+}
+
+.social-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    background: var(--primary-color);
+    color: var(--text-white);
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: 50px;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.social-btn:hover {
+    background: var(--primary-hover);
+    transform: translateY(-2px);
+}
+
+/* Formulário */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-label {
+    font-weight: 600;
+    margin-bottom: var(--spacing-xs);
+}
+
+.form-input,
+.form-textarea {
+    padding: var(--spacing-sm);
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    font-family: var(--font-primary);
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.form-input:focus,
+.form-textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(146, 64, 14, 0.1);
+}
+
+.form-textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* Status do Formulário */
+.form-status {
+    padding: var(--spacing-sm);
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.form-status.success {
+    background: #d1fae5;
+    color: #065f46;
+    border: 1px solid #6ee7b7;
+}
+
+.form-status.error {
+    background: #fee2e2;
+    color: #991b1b;
+    border: 1px solid #fca5a5;
+}
+
+/* 
+========================================
+BOTÕES
+========================================
+*/
+
+.btn {
+    padding: var(--spacing-sm) var(--spacing-lg);
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: var(--transition);
+    display: inline-block;
+    text-decoration: none;
+}
+
+.btn-primary {
+    background: var(--secondary-color);
+    color: var(--text-white);
+}
+
+.btn-primary:hover {
+    background: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.btn-primary:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.btn-block {
+    width: 100%;
+}
+
+/* 
+========================================
+FOOTER
+========================================
+*/
+
+.footer {
+    background: var(--bg-dark);
+    color: var(--text-white);
+    padding: var(--spacing-lg) 0;
+    text-align: center;
+}
+
+.footer-text {
+    margin-bottom: var(--spacing-xs);
+}
+
+.footer-credit {
+    color: var(--accent-color);
+    font-size: 0.9rem;
+}
+
+/* 
+========================================
+RESPONSIVIDADE
+========================================
+*/
+
+@media (max-width: 768px) {
+    /* Menu Mobile */
+    .desktop-menu {
+        display: none;
+    }
+    
+    .mobile-menu-btn {
+        display: block;
+    }
+    
+    /* Ajustes de Espaçamento */
+    :root {
+        --spacing-xl: 2rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-tagline {
+        font-size: 1.2rem;
+    }
+    
+    /* Produtos em coluna única em telas pequenas */
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* 
+========================================
+ACESSIBILIDADE
+========================================
+*/
+
+/* Foco visível para navegação por teclado */
+a:focus,
+button:focus,
+input:focus,
+textarea:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* Contraste adequado para texto */
+::selection {
+    background: var(--accent-color);
+    color: var(--text-dark);
+}
+
+/* Animações respeitam preferências do usuário */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+    
+    html {
+        scroll-behavior: auto;
+    }
+}
